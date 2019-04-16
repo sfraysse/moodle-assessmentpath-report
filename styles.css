@@ -1,0 +1,108 @@
+
+#page-course-report-assessmentpath-report-P1 #report-main-content h4,
+#page-course-report-assessmentpath-report-P1 #report-main-content h5,
+#page-course-report-assessmentpath-report-P2 #report-main-content h5
+{
+	text-align: left;
+}
+
+
+/* ------------------------------- P0 ---------------------------*/
+
+/* Progress Bar */
+
+#page-course-report-assessmentpath-report-P0 #region-main .generalbox,
+#page-course-report-assessmentpath-report-P0 #report-main-content .generalbox
+{
+	padding-bottom: 30px;
+}
+#page-course-report-assessmentpath-report-P0 #region-main table.progressbar_container,
+#page-course-report-assessmentpath-report-P0 #report-main-content table.progressbar_container {
+	margin: auto;
+}
+#page-course-report-assessmentpath-report-P0 #region-main td.progressbar,
+#page-course-report-assessmentpath-report-P0 #report-main-content td.progressbar {
+	width: 90%;
+}
+#page-course-report-assessmentpath-report-P0 #region-main td.percent,
+#page-course-report-assessmentpath-report-P0 #report-main-content td.percent {
+	width: 10%;
+}
+#page-course-report-assessmentpath-report-P0 #region-main div.bar,
+#page-course-report-assessmentpath-report-P0 #report-main-content div.bar {
+	border: solid 1px #666;
+	background: #cccccc;
+	text-align: left;
+	height: 20px;
+    margin-right: 10px;
+}
+#page-course-report-assessmentpath-report-P0 #region-main div.progress,
+#page-course-report-assessmentpath-report-P0 #report-main-content div.progress {
+	height: 20px;
+	background: #85C440;
+}
+#page-course-report-assessmentpath-report-P0 #region-main div.progress,
+#page-course-report-assessmentpath-report-P0 #report-main-content div.progress,
+#page-course-report-assessmentpath-report-P0 #region-main th.progress,
+#page-course-report-assessmentpath-report-P0 #report-main-content th.progress,
+#page-course-report-assessmentpath-report-P0 #region-main td.progress,
+#page-course-report-assessmentpath-report-P0 #report-main-content td.progress {
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* P0 Table */
+
+#page-course-report-assessmentpath-report-P0 #region-main table,
+#page-course-report-assessmentpath-report-P0 #report-main-content table
+{
+	background:transparent;
+    text-align: center;
+}
+#page-course-report-assessmentpath-report-P0 #region-main table tr.vspace:hover td,
+#page-course-report-assessmentpath-report-P0 #report-main-content table tr.vspace:hover td
+{
+	background-color: #fff;
+}
+#page-course-report-assessmentpath-report-P0 #region-main table td.title,
+#page-course-report-assessmentpath-report-P0 #region-main table td.progress,
+#page-course-report-assessmentpath-report-P0 #region-main table td.completed,
+#page-course-report-assessmentpath-report-P0 #region-main table td.incomplete,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.title,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.progress,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.completed,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.incomplete
+{
+    border: 1px solid #ddd;
+}
+#page-course-report-assessmentpath-report-P0 #region-main table th.title,
+#page-course-report-assessmentpath-report-P0 #region-main table td.title,
+#page-course-report-assessmentpath-report-P0 #report-main-content table th.title,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.title
+{
+	text-align: left;
+	font-weight: bold;
+	background:transparent; 
+}
+#page-course-report-assessmentpath-report-P0 #region-main table th.progress,
+#page-course-report-assessmentpath-report-P0 #region-main table td.progress,
+#page-course-report-assessmentpath-report-P0 #report-main-content table th.progress,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.progress
+{
+	background:transparent;
+    width: 8em;
+	text-align: center;
+}
+#page-course-report-assessmentpath-report-P0 #region-main table td.completed,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.completed {
+	background: #85C440;
+}
+#page-course-report-assessmentpath-report-P0 #region-main table td.incomplete,
+#page-course-report-assessmentpath-report-P0 #report-main-content table td.incomplete {
+	background: #cccccc;
+}
+
+
+
