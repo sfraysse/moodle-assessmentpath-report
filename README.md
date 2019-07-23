@@ -3,14 +3,16 @@
 
 # Versions
 
-Vous êtes sur la page de la **version 3.4.0** du plugin Rapport de cours Assessment Path, dernière version compatible avec **Moodle 3.4**.
+Vous êtes sur la page de la **version 3.5.0** du plugin Rapport Assessment Path, dernière version compatible avec **Moodle 3.5**.
 
-Ce plugin n'existe pas encore pour les versions plus récentes de Moodle.
+Ce plugin existe aussi pour les versions suivantes de Moodle :
+- **Moodle 3.4** : [Rapport AssessmentPath 3.4](https://github.com/sfraysse/moodle-assessmentpath-report/tree/3.4)
+- **Moodle 3.6** : [Rapport AssessmentPath 3.6](https://github.com/sfraysse/moodle-assessmentpath-report/tree/3.6)
 
 
 # Installation
 
-- Télécharger la dernière version du plugin : https://github.com/sfraysse/moodle-assessmentpath-report/archive/v3.4.0.zip.
+- Télécharger la dernière version du plugin : https://github.com/sfraysse/moodle-assessmentpath-report/archive/v3.5.0.zip.
 - Dans `Moodle > Administration > Plugins > Install plugins`, importer le fichier ZIP du plugin.
 - Suivre la procédure d'installation.
 

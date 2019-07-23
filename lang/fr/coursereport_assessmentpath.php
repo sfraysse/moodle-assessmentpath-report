@@ -20,3 +20,6 @@
 
 $string['pluginname'] = 'Rapports Assessment Path';
 $string['pluginpagetype'] = 'Rapports Assessment Path';
+
+// Privacy
+$string['privacy:metadata'] = 'Le plugin Rapports AssessmentPath ne conserve aucune donnée personnelle.';

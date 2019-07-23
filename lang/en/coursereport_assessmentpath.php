@@ -20,3 +20,10 @@
 
 $string['pluginname'] = 'Assessment Path reports';
 $string['pluginpagetype'] = 'Assessment Path reports';
+
+// Privacy
+$string['privacy:metadata:assessmentpath_comments'] = 'Comments entered by the instructors on the Assessment Path';
+$string['privacy:metadata:comments:contexttype'] = 'The type of the comment context';
+$string['privacy:metadata:comments:contextid'] = 'The ID of the comment context';
+$string['privacy:metadata:comments:userid'] = 'The ID of the user who performed the Assessment Path';
+$string['privacy:metadata:comments:comment'] = 'The comment entered for this user';
