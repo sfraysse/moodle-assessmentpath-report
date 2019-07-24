@@ -172,8 +172,11 @@ class provider implements
                         comment.comment,
                         ctx.id as contextid
                     FROM {assessmentpath_comments} comment
+                    JOIN {modules} m
+                        ON m.name = 'assessmentpath'
                     JOIN {course_modules} cm
                         ON cm.instance = comment.contextid
+                       AND cm.module = m.id
                     JOIN {context} ctx
                         ON ctx.instanceid = cm.id
                     WHERE ctx.id $insql
@@ -190,7 +193,7 @@ class provider implements
             }
             $comments->close();
 
-            // The comments data is organised in: {Course name}/{AssessmentPath activity name}/data.json
+            // The comments data is organised in: {Course name}/{AssessmentPath name}/data.json
             array_walk($alldata, function ($commentdata, $contextid) {
                 $context = \context::instance_by_id($contextid);
                 $subcontext = [
@@ -198,7 +201,7 @@ class provider implements
                 ];
                 writer::with_context($context)->export_data(
                     $subcontext,
-                    (object) ['comment' => $commentdata]
+                    $commentdata
                 );
             });
         }
@@ -239,11 +242,12 @@ class provider implements
             array_walk($alldata, function ($commentdata, $contextid) {
                 $context = \context::instance_by_id($contextid);
                 $subcontext = [
+                    get_string('modulename', 'assessmentpath'),
                     get_string('comments', 'assessmentpath')
                 ];
                 writer::with_context($context)->export_data(
                     $subcontext,
-                    (object) ['comment' => $commentdata]
+                    $commentdata
                 );
             });
         }
@@ -316,7 +320,7 @@ class provider implements
                         ON m.name = 'assessmentpath'
                     JOIN {course_modules} cm
                         ON cm.instance = comment.contextid
-                    AND cm.module = m.id
+                       AND cm.module = m.id
                     JOIN {context} ctx
                         ON ctx.instanceid = cm.id
                     WHERE comment.userid = :userid
