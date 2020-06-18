@@ -89,7 +89,7 @@ if ($format == 'lms' || $format == 'html') {
 	$prestr2 = '<h3 class="mdl-align group">'.get_string('groupresults', 'scormlite', '');	
 	if ($fullmode && $format == 'lms') $poststr = ' '.assessmentpath_report_get_link_P2($courseid, $groupingid).'</h3>';
 	else $poststr = '</h3>';
-	$groupingid = scormlite_print_usergroup_box($courseid, $groupings, $groupingid, $userid, $strtitle, $prestr1, $prestr2, $poststr, ($format == 'lms'), ($format != 'csv'));
+	$groupingid = scormlite_print_usergroup_box($courseid, $groupings, $groupingid, null, null, $userid, $strtitle, $prestr1, $prestr2, $poststr, ($format == 'lms'), ($format != 'csv'));
 }
 $url = new moodle_url('/course/report/assessmentpath/report/P1.php', array('courseid'=>$courseid, 'userid'=>$userid, 'groupingid'=>$groupingid));  // Update
 
@@ -152,12 +152,12 @@ foreach ($userids as $userid) {
 			$activitytitle = '['.$activity->code.'] '.$activity->title;
 			if ($fullmode && $format == 'lms') {
 				$cm = get_coursemodule_from_instance('assessmentpath', $activityid, 0, false, MUST_EXIST);
-				$activitytitle = assessmentpath_report_get_link_P3($cm->id).' '.$activitytitle;
+				$activitytitle = assessmentpath_report_get_link_P3($cm->id, $groupingid).' '.$activitytitle;
 			}
 			$worksheet->start_section($activitytitle, $index);
 	
 			// Build table
-			$table = new assessmentpath_report_table($courseid, array('testcaption', $activity->initial_tests, 'avg'), $url, $activity->remediation_tests);
+			$table = new assessmentpath_report_table($courseid, $groupingid, array('testcaption', $activity->initial_tests, 'avg'), $url, $activity->remediation_tests);
 			$table->define_presentation($activity->colors, $fullmode);
 			$table->add_tests(get_string('initial', 'assessmentpath'), $activity->initial_scores, $activity->initial_avg, $userid, 0, ($format == 'lms'));
 			if (isset($activity->remediation_avg)) {

@@ -41,12 +41,13 @@ $context = context_course::instance($courseid, MUST_EXIST);
 require_login($course);
 require_capability('mod/scormlite:viewotherreport', $context);
 
-// Page
-
+// Page URL
 $url = new moodle_url('/course/report/assessmentpath/report/P2.php', array('courseid'=>$courseid, 'groupingid'=>$groupingid));
 if ($format == 'lms') $PAGE->set_url($url);
 
-// Header
+//
+// Print the page
+//
 
 // Print HTML title
 if ($format == 'lms') $title = coursereport_assessmentpath_print_header($course, 'P2');
@@ -63,20 +64,15 @@ $prestr1 = '<h2 class="main">'.$title.'</h2><h3 class="mdl-align group">';
 $prestr2 = '<h2 class="main">'.$title.'</h2><h3 class="mdl-align group">'.get_string('groupresults', 'scormlite', '');	
 $poststr = '</h3>';
 if ($format == 'lms' || $format == 'html') {
-	$groupingid = scormlite_print_usergroup_box($courseid, $groupings, $groupingid, null, $strtitle, $prestr1, $prestr2, $poststr, ($format == 'lms'), ($format != 'csv'));
+	$groupingid = scormlite_print_usergroup_box($courseid, $groupings, $groupingid, null, null, null, $strtitle, $prestr1, $prestr2, $poststr, ($format == 'lms'), ($format != 'csv'));
 }
 $url = new moodle_url('/course/report/assessmentpath/report/P2.php', array('courseid'=>$courseid, 'groupingid'=>$groupingid)); // Update
 
 //
-// Page setup 
+// Prepare Excel 
 //
 
-// Prepare Excel title
-
-// KD2015-31 - End of "group members only" option
-// $grouping = $DB->get_record('groupings', array('id'=>$groupingid), 'id,name', MUST_EXIST);
 $grouping = $DB->get_record('groups', array('id'=>$groupingid), 'id,name', MUST_EXIST);
-
 $titles = array();
 $titles[] = get_string('groupresults_nostyle', 'scormlite', $grouping->name);
 $titles[] = $course->fullname;
@@ -116,7 +112,7 @@ if (empty($activities) || empty($users)) {
 	$displayrank = $config->displayrank;
 	if ($displayrank) $cols[] = 'rank';
 	// Table
-	$table = new assessmentpath_report_table($courseid, $cols, $url);
+	$table = new assessmentpath_report_table($courseid, $groupingid, $cols, $url);
 	$table->define_presentation(scormlite_get_config_colors("assessmentpath"));
 	$table->add_users($users, ($format == 'lms'));
 	$table->add_average($activities, $global_avg);
@@ -146,7 +142,7 @@ if (empty($activities) || empty($users)) {
 			$cmids[] = $tmpcm->id;
 		}
 		$paramcmids = implode(',', $cmids);
-		$P3url = new moodle_url($CFG->wwwroot.'/mod/assessmentpath/report/P3.php', array('id'=>$paramcmids));
+		$P3url = new moodle_url($CFG->wwwroot.'/mod/assessmentpath/report/P3.php', array('id'=>$paramcmids, 'groupingid'=>$groupingid));
 		// Export users
 		$paramuserids = implode(',', $userids);
 		$P1url = new moodle_url($CFG->wwwroot.'/course/report/assessmentpath/report/P1.php', array('courseid'=>$courseid, 'userid'=>$paramuserids, 'groupingid'=>$groupingid));
