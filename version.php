@@ -20,8 +20,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version   = 2018112802;                        // The current module version (Date: YYYYMMDDXX).
-$plugin->requires  = 2018112800;                        // Requires this Moodle version.
+$plugin->version   = 2020060900;                        // The current module version (Date: YYYYMMDDXX).
+$plugin->requires  = 2020060900;                        // Requires this Moodle version.
 $plugin->component = 'coursereport_assessmentpath';     // Full name of the plugin (used for diagnostics)
 
 
