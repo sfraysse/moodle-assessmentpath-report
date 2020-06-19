@@ -8,7 +8,7 @@ Vous êtes sur la page de la **version 3.6.2** du plugin Rapport Assessment Path
 Ce plugin existe aussi pour les versions suivantes de Moodle :
 - **Moodle 3.4** : [Rapport AssessmentPath 3.4](https://github.com/sfraysse/moodle-assessmentpath-report/tree/3.4)
 - **Moodle 3.5** : [Rapport AssessmentPath 3.5](https://github.com/sfraysse/moodle-assessmentpath-report/tree/3.5)
-- **Moodle 3.9** : [Rapport AssessmentPath 3.9](https://github.com/sfraysse/moodle-assessmentpath-report/tree/3.9)
+- **Moodle 3.9** : [Rapport AssessmentPath 3.9](https://github.com/sfraysse/moodle-assessmentpath-report)
 
 
 # Installation
