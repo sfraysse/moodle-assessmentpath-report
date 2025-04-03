@@ -25,7 +25,7 @@ require_once($CFG->libdir.'/completionlib.php');
  *
  * @param navigation_node $navigation The navigation node to extend
  * @param stdClass $course The course to object for the report
- * @param stdClass $context The context of the course
+ * @param object $context The context of the course
  */
  
 function assessmentpath_report_extend_navigation($navigation, $course, $context) {
